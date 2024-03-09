@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" href="Favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="Favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="Favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="Favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="Favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
+    <link rel="manifest" href="Favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="Favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Videos.css">
+    <title> InclusiWeb: Videos </title>
+</head>
+<body>  
+    
+    <div class="head">
+
+        <div class="boton" id="miBoton" onclick="cambiarImagen()">
+            <img id="imagenBoton" src="Imagenes/parlante.png" alt="Imagen 1">
+        </div>
+
+        <audio id="audio" src="Audio/AUDIO 2.1.mp3"></audio>
+        
+        <figure>
+            <a href="index.html"><img src="Imagenes/Logo.png" height="55px" width="100%" alt="logo"></a>
+        </figure>
+
+        <div class="logo"> </div>
+        <input type="checkbox" id="toggle">
+        <label for="toggle"> <img class="menu" src="Img/menu.svg" alt="menu"> </label>
+
+        <nav class="navbar">
+            <ul>
+                <li> <a href="index.html"> Inicio </a></li>
+                <li> <a href="videos.html"> Videos </a></li>
+                <li> <a href="nosotros.html"> Nosotros </a></li>
+                <li> <a href="agradecimientos.html"> Agradecimientos </a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="content header">
+        <br><br>
+        <h2 class="title"> Videos </h2>
+    </header>
+
+    <section class="content about">
+
+        <div id="contenedor">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iVU6qRNoiV4" frameborder="0" allowfullscreen></iframe>
+            <i> En este video se nos cuentan las  historias de los hijos de estas madres que formaron un grupo para poder compartir sus 
+                experiencias y apoyarse mutuamente. </i>
+        </div>
+
+        <div id="contenedor">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/bVUGw1clK3U" frameborder="0" allowfullscreen></iframe>
+            <i> Este video es muy interesante ya que nos cuenta de como la falta de confianza nos afecta en nuestra vida diaria 
+                impidiéndonos dar nuestro máximo potencial. </i>
+        </div>
+
+        <div id="contenedor">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kqCYrw-yu2U" frameborder="0" allowfullscreen></iframe>
+            <i> En este video nos hablan sobre como a veces pensamos que nuestros problemas son muy difíciles de solucionar, 
+                pero existe gente que nos hace ver que son cosa de nada y no debemos preocuparnos sino ocuparnos en tener una 
+                actitud positiva ante todo. </i>
+        </div>
+
+        <div id="contenedor">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/F_JEuwJrE7c" frameborder="0" allowfullscreen></iframe>
+            <i> En el siguiente video se presentarán 5 casos de personas que han podido salir adelante gracias a sus empresas 
+                que los aceptan tal y como son brindándoles todo su apoyo. </i>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <h2>&copy; 2023 InclusiWeb. Todos los derechos reservados.</h2>
+        </div>    
+    </footer>
+
+    <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+    </label>
+    <script src="videos.js"></script>
+
+</body>
+</html>
+

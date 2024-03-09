@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+
+.boton {
+  width: 80px;
+  height: 80px;
+  background-color: #3498db; /* Color de fondo del botón */
+  border-radius: 50%; /* Para hacerlo circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.boton i {
+  color: #fff; /* Color del ícono */
+  font-size: 24px;
+}

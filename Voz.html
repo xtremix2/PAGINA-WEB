@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproducción de Nombres</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <span>Nombre 1</span>
+            <button onclick="pronunciarNombre('nombre 1')">Reproducir</button>
+        </li>
+        <li>
+            <span>Nombre 2</span>
+            <button onclick="pronunciarNombre('Nombre 2')">Reproducir</button>
+        </li>
+        <li>
+            <span>Nombre 3</span>
+            <button onclick="pronunciarNombre('Nombre 3')">Reproducir</button>
+        </li>
+    </ul>
+
+    <script>
+        function pronunciarNombre(nombre) {
+            // Utiliza una biblioteca de texto a voz o una API de síntesis de voz para reproducir el nombre.
+            // Ejemplo utilizando la API de síntesis de voz de JavaScript:
+            var synth = window.speechSynthesis;
+            var utterance = new SpeechSynthesisUtterance(nombre);
+            synth.speak(utterance);
+        }
+    </script>
+</body>
+</html>

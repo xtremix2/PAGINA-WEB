@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #FFFFFF;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.dark-mode {
+    background-color: #272525;
+    color: #FFFFFF;
+}
+
+.modo-btn {
+    padding: 10px 10px;
+    background-color: #ffffff;
+    border: 2px solid #000000; /* Añade un borde alrededor del botón */
+    border-radius: 50px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 55px;
+    right: 20px;
+    z-index: 999;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Agrega transición para el color de fondo, texto y borde */
+}
+
+.modo-btn.dark-mode {
+    color: #ffffff;
+    background-color: #33333300;
+}
+
+
+/* Estilos para el botón de alternancia */
+.switch {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+    z-index: 9999;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Estilos para el fondo del botón de alternancia en modo claro */
+.switch .slider {
+    border-radius: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilos para el indicador dentro del botón */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #888888;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Cambio de color del botón en modo oscuro */
+input:checked + .slider {
+    background-color: #21a500;
+}
+
+/* Movimiento del indicador al cambiar el estado */
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+    
+/* Estilos para la barra de navegación */
+.head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    height: 60px;
+    background: #378694;    
+}
+
+body.dark-mode .head {
+    background: #5d2a86;
+}
+
+.logo{
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #21a500;
+    font-weight: 700;
+}
+
+.boton {
+    width: 80px;
+    height: 80px;
+    background-color: #4fb2c4; /* Color de fondo del botón en modo claro */
+    border-radius: 50%; /* Para hacerlo circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; 
+}
+
+.boton img {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: box-shadow 0.3s; 
+}
+
+.boton:hover {
+    box-shadow: 0 0 20px rgba(0, 148, 0, 0.8); 
+}
+
+/* Estilo del contorno (neon) al dar clic */
+.boton.active {
+    box-shadow: 0 0 20px rgba(0, 148, 0, 0.8);
+}
+
+/* Estilo del contorno (neon) cuando está activo y se mantiene encendido */
+.boton.active.permanent {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8); 
+}
+
+body.dark-mode .boton.active, body.dark-mode .boton.active.permanent {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+.boton i {
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+/* Cambios para el modo oscuro */
+body.dark-mode .boton {
+    background-color: #783caa;
+    
+}
+
+body.dark-mode .boton i {
+    color: #FFFFFF;
+}
+
+.navbar ul{
+    list-style: none;
+}
+
+.head .navbar ul li{
+    float: left;
+    position: relative;
+}
+
+.head .navbar ul li a{
+    font-size: 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    transition: all .2s ease;
+    text-transform: capitalize;
+}
+
+.head .navbar ul li a:hover {
+    background: #2b7380;
+}
+
+body.dark-mode .head .navbar a:hover {
+    background: #9971b9;
+}
+
+.head .navbar ul li ul{
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.head .navbar ul li ul li ul{
+    position: absolute;
+    top: 0;
+    right: 300px;
+}
+
+.head .navbar ul li ul li {
+    width: 100%;
+}
+
+.head .navbar ul li:hover > ul{
+    display: initial;
+}
+
+#toggle,
+.head label{
+    display: none;
+    cursor: pointer;
+}
+
+.menu{
+    width: 45px;
+    height: 35px;
+}
+
+body.dark-mode .head {
+    background: #5d2a86;
+}
+
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo {
+    margin-left: 30px;
+    
+}
+
+.logo a, .navbar a {
+    display: block;
+    padding: 10px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+.navbar a:hover {
+    background: #2b7380;
+}
+
+body.dark-mode .navbar a:hover {
+    background: #9971b9;
+}
+
+/* Estilos para el encabezado */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: url(Imagenes/Fondo.jpg) no-repeat center;
+    background-size: cover;
+}
+
+/* Estilos para la sección "header" en ambos modos */
+.content.header {
+    background-image: url(Imagenes/Fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+
+/* Estilos para la sección "header" en modo oscuro */
+body.dark-mode .content.header {
+    background-image: url(Imagenes/Fondo2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+
+body.dark-mode .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: url(Imagenes/Fondo2.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.title {
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .title {
+    color: #FFFFFF;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.content {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para la sección "about" en ambos modos INFORMACION*/
+.content.about {
+    background-color: #ffffff;
+    padding: 200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 800px;
+}
+
+/* Estilos para la sección "about" en modo oscuro */
+body.dark-mode .content.about {
+    background-color: #454549;
+    padding: 200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 800px;
+}
+
+/* Estilos para la clase "titulo" en modo claro */
+.titulo {
+    color: #000000;
+}
+
+/* Estilos para la clase "titulo" en modo oscuro */
+body.dark-mode .titulo {
+    color: #FFFFFF;
+}
+
+h2{
+    font-size: 40px;
+    color: #FDFEFF;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.footer{
+    background-color: #151521;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para la sección "footer" en modo claro */
+.footer {
+    background-color: #356e75;
+    color: #FFFFFF;
+}
+
+/* Estilos para la sección "footer" en modo oscuro */
+body.dark-mode .footer {
+    background-color: #4d0686;
+    color: #FFFFFF;
+}
+
+/* Estilos para pantallas más pequeñas, como teléfonos móviles */
+@media only screen and (max-width: 768px) {
+    .title {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    .content.header img,
+    body.dark-mode .content.header img {
+        width: 100%;
+        height: auto;
+    }
+
+    .content.header {
+        height: 300px; /* Ajusta la altura original */
+    }
+
+    /* Estilos para la sección "header" en modo oscuro */
+    body.dark-mode .content.header {
+        height: 300px; /* Ajusta la altura en modo oscuro si es necesario */
+    }
+
+    .content.about {
+        padding: 20px; /* Ajusta el relleno original */
+        height: auto;
+    }
+
+    /* Estilos para la sección "about" en modo oscuro */
+    body.dark-mode .content.about {
+        padding: 20px; /* Ajusta el relleno en modo oscuro si es necesario */
+        height: auto;
+    }
+
+    .modo-btn,
+    .switch {
+        bottom: 45px;
+    }
+
+    .switch {
+        bottom: 15px;
+    }
+
+    .head label {
+        display: initial;
+    }
+
+    .head {
+        padding: 5px 5%;
+    }
+
+    .head .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(1, 1, 1, 0.7);
+        display: none;
+    }
+
+    .head .navbar ul li,
+    .head .navbar ul li a,
+    .head .navbar ul li ul,
+    .head .navbar ul li ul li,
+    .head .navbar ul li ul li ul {
+        width: 100%;
+    }
+
+    .head .navbar ul li a {
+        padding: 8px 30px 8px 10%;
+    }
+
+    .head .navbar ul li ul li {
+        background-color: rgba(1, 1, 1, 0.7);
+    }
+
+    .head .navbar ul li ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    #toggle:checked ~ .navbar {
+        display: block;
+    }
+
+    .header {
+        height: 50vh;
+    }
+
+    .content.header {
+        height: 300px;
+    }
+
+    .content.about {
+        height: auto;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .contact,
+    .footer {
+        padding: 20px 0;
+    }
+}
